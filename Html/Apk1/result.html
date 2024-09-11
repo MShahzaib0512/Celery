@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Home |Apk1</title>
+ <title>Results |Apk1</title>
 </head>
 <body>
  <nav>
@@ -13,11 +13,14 @@
    <li><a href="{% url 'contact' %}">Contact</a></li>
   </ol>
  </nav>
- <h1>Home page</h1>
+ <h1>Results</h1>
  <hr>
- {% if result.id %}
- <h1>{{result.id}}</h1>
-  <a href="{% url 'results' result.id %}">Check result</a>
+ {% if result %}
+  <ul>
+   <li><strong>Result ID:</strong>{{result.id}}</li>
+   <li><strong>Result Status:</strong>{{result.status}}</li>
+   <li><strong>Result:</strong>{{result.result}}</li>
+  </ul>
  {% endif %}
 </body>
 </html>
