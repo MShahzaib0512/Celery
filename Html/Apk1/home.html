@@ -16,7 +16,7 @@
  <h1>Home page</h1>
  <hr>
  {% if result.id %}
- <h1>{{result.id}}</h1>
+ <h1>tASK ID:</h1><h2>{{result.id}}</h2>
   <a href="{% url 'results' result.id %}">Check result</a>
  {% endif %}
 </body>

@@ -2,6 +2,7 @@
 import os
 from celery import Celery
 from time import sleep
+# from apk1.tasks import *
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'celeryapp.settings')
 
@@ -22,6 +23,11 @@ app.autodiscover_tasks()
 def add(x,y):
  sleep(5)
  return x + y
+
+@app.task
+def ten(id):
+    print('task runs')
+    return id
 # @app.task(bind=True, ignore_result=True)
 # def debug_task(self):
 #     print(f'Request: {self.request!r}')
